@@ -28,7 +28,7 @@ export const Input = styled.input`
 export const FormBtn = styled.button`
   margin-top: 60px;
   padding: 4px;
-  width: 30%;
+  /* width: 30%; */
   height: 100%;
   flex-shrink: 0;
   border-radius: 15px;
