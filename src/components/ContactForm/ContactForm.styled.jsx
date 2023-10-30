@@ -30,7 +30,6 @@ export const FormBtn = styled.button`
   padding: 4px;
   width: 30%;
   height: 100%;
-  flex-shrink: 0;
   border-radius: 15px;
   background: #a656dc;
   border: none;
@@ -40,12 +39,8 @@ export const FormBtn = styled.button`
     box-shadow: 1px 2px 6px 0px rgba(65, 33, 83, 0.7);
   }
   box-shadow: 0 2px 4px rgba(65, 33, 83, 0.7);
-
-  @media screen and (max-width: 768px) {
-    font-size: 18px;
-  }
 `;
-export const ErrorMessage = styled.p`
+export const StyledError = styled.p`
   color: red;
   font-size: 12px;
   border-radius: 25px;

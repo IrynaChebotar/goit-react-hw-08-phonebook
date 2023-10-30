@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { StyledForm, Input, FormBtn, ErrorMessage } from './ContactForm.styled';
+import { StyledForm, Input, FormBtn, StyledError } from './ContactForm.styled';
 import { logIn } from '../../redux/auth/authOperation';
 
 export const loginSchema = yup
@@ -50,10 +50,10 @@ export function LoginForm() {
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email">Email</label>
         <Input {...register('email')} type="email" id="email" />
-        <ErrorMessage>{errors.email?.message}</ErrorMessage>
+        <StyledError>{errors.email?.message}</StyledError>
         <label htmlFor="password">Password</label>
         <Input {...register('password')} type="password" id="password" />
-        <ErrorMessage>{errors.password?.message}</ErrorMessage>
+        <StyledError>{errors.password?.message}</StyledError>
         <FormBtn type="submit">Login</FormBtn>
       </StyledForm>
     </>
