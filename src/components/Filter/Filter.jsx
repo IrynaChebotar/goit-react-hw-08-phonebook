@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchForm, SearchInput } from './Filter.styled';
+import { SearchForm, Input } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/contacts/filterSlice';
 
@@ -13,7 +13,7 @@ export const Filter = () => {
   return (
     <SearchForm>
       <p>Find contacts by name</p>
-      <SearchInput
+      <Input
         name="search"
         type="text"
         value={filterValue}

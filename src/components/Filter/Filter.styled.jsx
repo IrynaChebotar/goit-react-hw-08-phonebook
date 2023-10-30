@@ -13,7 +13,7 @@ export const SearchForm = styled.div`
   margin-bottom: 30px;
 `;
 
-export const SearchInput = styled.input`
+export const Input = styled.input`
   width: 250px;
   border-radius: 6px;
   outline: none;
