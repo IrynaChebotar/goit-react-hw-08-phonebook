@@ -1,51 +1,47 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { ToastContainer, Zoom } from 'react-toastify';
-import { Section } from './Section/Section';
-import { ContactsForm } from './ContactForm/ContactForm';
-import { Contacts } from './Contacts/Contacts';
-import { ContactsFilter } from './ContactFilter/ContactFilter';
-import { Loader } from './Loader';
-import { fetchContacts } from 'redux/operations';
-import {
-  selectContacts,
-  selectIsLoading,
-  selectVisibleContacts,
-} from 'redux/selectors/selectors';
+import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getCurrentUser } from '../redux/auth/authOperation';
+import { Routes, Route } from 'react-router-dom';
+import { lazy } from 'react';
+import { PrivateRoute } from './PrivateRoute';
+import SharedLayout from '../components/SharedLayout/SharedLayout';
+import { RestrictedRoute } from './RestrictedRoute';
+const Home = lazy(() => import('../pages/Home'));
+const Register = lazy(() => import('../pages/Register'));
+const Login = lazy(() => import('../pages/Login'));
+const Contacts = lazy(() => import('../pages/Contacts'));
+const NotFound = lazy(() => import('../pages/NotFound'));
 
-export const App = () => {
-  const contacts = useSelector(selectContacts);
-  const isLoading = useSelector(selectIsLoading);
-  const visibleContacts = useSelector(selectVisibleContacts);
+export function App() {
   const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(getCurrentUser());
   }, [dispatch]);
-
   return (
-    <div>
-      <Section title="Phonebook">
-        <ContactsForm />
-      </Section>
-
-      <Section>
-        <ContactsFilter />
-        {contacts.length > 0 ? (
-          <>
-            {visibleContacts.length === 0 && <p>No one found with that name</p>}
-            {isLoading ? <Loader /> : null}
-            {contacts.length === 0 && !isLoading && (
-              <p>There are no contacts here yet</p>
-            )}
-            {contacts.length > 0 && <Contacts />}
-          </>
-        ) : (
-          <p>There are no contacts here yet</p>
-        )}
-      </Section>
-
-      <ToastContainer transition={Zoom} />
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
+        <Route
+          path="register"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<Register />} />
+          }
+        />
+        <Route
+          path="login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+          }
+        />
+        <Route
+          path="contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<Contacts />} />
+          }
+        />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
-};
+}
