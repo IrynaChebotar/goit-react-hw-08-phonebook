@@ -14,12 +14,12 @@ export const StyledHeader = styled.header`
   background-color: #bc73f8; /* Колір залишено незмінним */
 `;
 
-export const LogoWrap = styled.div`
+export const Wrap = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const LogoText = styled.p`
+export const Description = styled.p`
   font-size: 26px;
   font-weight: 700;
   text-decoration: none;

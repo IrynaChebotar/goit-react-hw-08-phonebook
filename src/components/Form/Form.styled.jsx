@@ -8,7 +8,7 @@ export const StyledForm = styled.form`
   padding: 15px;
 `;
 
-export const StyledInput = styled.input`
+export const Input = styled.input`
   width: 200px;
   border-radius: 15px;
   outline: none;

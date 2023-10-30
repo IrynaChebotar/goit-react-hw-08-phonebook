@@ -4,12 +4,7 @@ import { useDispatch } from 'react-redux';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Notiflix from 'notiflix';
 import * as yup from 'yup';
-import {
-  StyledForm,
-  StyledInput,
-  FormButton,
-  ErrorMessage,
-} from './Form.styled';
+import { StyledForm, Input, FormButton, ErrorMessage } from './Form.styled';
 
 import { createUser } from '../../redux/auth/authOperation';
 
@@ -62,13 +57,13 @@ export function RegisterForm() {
     <>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="name">Name</label>
-        <StyledInput {...register('name')} type="text" id="name" />
+        <Input {...register('name')} type="text" id="name" />
         <ErrorMessage>{errors.name?.message}</ErrorMessage>
         <label htmlFor="email">Email</label>
-        <StyledInput {...register('email')} type="email" id="email" />
+        <Input {...register('email')} type="email" id="email" />
         <ErrorMessage>{errors.email?.message}</ErrorMessage>
         <label htmlFor="password">Password</label>
-        <StyledInput {...register('password')} type="password" id="password" />
+        <Input {...register('password')} type="password" id="password" />
         <ErrorMessage>{errors.password?.message}</ErrorMessage>
         <FormButton type="submit">Register</FormButton>
       </StyledForm>

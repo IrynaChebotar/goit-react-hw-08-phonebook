@@ -48,7 +48,7 @@ export const LogOutButton = styled.button`
 `;
 
 export const UserName = styled.span`
-  color: #f6ab13;
+  color: #13aaf6;
   font-style: italic;
   font-size: 22px;
   text-transform: uppercase;
