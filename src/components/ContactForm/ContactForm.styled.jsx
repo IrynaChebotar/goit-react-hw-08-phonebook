@@ -25,7 +25,7 @@ export const Input = styled.input`
     border-color: #dd00ff;
   }
 `;
-export const FormButton = styled.button`
+export const FormBtn = styled.button`
   margin-top: 60px;
   padding: 4px;
   width: 30%;

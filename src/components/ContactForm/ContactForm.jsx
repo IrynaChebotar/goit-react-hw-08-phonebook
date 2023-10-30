@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import Notiflix from 'notiflix';
-import { StyledForm, Input, FormButton } from './Form.styled.jsx';
+import { StyledForm, Input, FormBtn } from './ContactForm.styled.jsx';
 import { getContacts } from '../../redux/contacts/selectors.js';
 import { addContact } from '../../redux/contacts/operations.js';
 import { setFilter } from '../../redux/contacts/filterSlice.js';
@@ -63,7 +63,7 @@ export function ContactForm() {
         id="number"
         placeholder="enter the contact number"
       />
-      <FormButton type="submit">Add contact</FormButton>
+      <FormBtn type="submit">Add contact</FormBtn>
     </StyledForm>
   );
 }

@@ -7,10 +7,10 @@ import { lazy } from 'react';
 import { PrivateRoute } from './PrivateRoute';
 import SharedLayout from '../components/SharedLayout/SharedLayout';
 import { RestrictedRoute } from './RestrictedRoute';
-const Home = lazy(() => import('../pages/Home'));
-const Register = lazy(() => import('../pages/Register'));
+const Home = lazy(() => import('../pages/HomePage'));
+const Register = lazy(() => import('../pages/RegisterPage'));
 const Login = lazy(() => import('../pages/Login'));
-const Contacts = lazy(() => import('../pages/Contacts'));
+const Contacts = lazy(() => import('../pages/ContactsPage'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 
 export function App() {

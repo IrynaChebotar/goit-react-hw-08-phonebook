@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginForm } from '../components/Form/LoginForm';
+import { LoginForm } from '../components/ContactForm/LoginForm';
 import { NavigationLink } from '../components/AuthNav/AuthNav.styled';
 
 function Login() {

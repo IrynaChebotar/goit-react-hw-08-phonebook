@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchForm, Input } from './Filter.styled';
+import { SearchForm, Input } from './ContactFilter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/contacts/filterSlice';
 

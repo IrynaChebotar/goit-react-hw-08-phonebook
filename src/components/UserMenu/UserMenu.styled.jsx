@@ -6,16 +6,16 @@ export const Menu = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 `;
 export const Wrap = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 8px;
 `;
 export const ContactsLink = styled(Link)`
   min-width: 70px;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 5px;
   text-decoration: none;
   font-style: inherit;
   color: inherit;
@@ -23,7 +23,7 @@ export const ContactsLink = styled(Link)`
   &:focus,
   &:hover {
     color: rgb(8, 38, 13);
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: underline;
   }
 `;
@@ -40,7 +40,7 @@ export const LogOutButton = styled.button`
   &:focus,
   &:hover {
     color: rgb(8, 38, 13);
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: underline;
   }
   font-size: 20px;
